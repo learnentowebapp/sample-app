@@ -7,10 +7,6 @@ gem 'rails', '3.2.12'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -19,11 +15,19 @@ gem 'jquery-rails'
 group :development do
 	gem 'rspec-rails'
 	gem 'sqlite3'
+	gem 'guard-rspec'
+	gem 'guard'
+	gem 'terminal-notifier-guard'
+	gem 'rb-fsevent'
+	gem 'guard-spork'
+	gem 'spork'
 end
 
 group :test do
-	gem 'rspec'
-	gem 'sqlite3'
+	gem 'capybara'
+	gem 'guard'
+	gem 'terminal-notifier-guard'
+	gem 'rb-fsevent'
 end
 
 group :production do

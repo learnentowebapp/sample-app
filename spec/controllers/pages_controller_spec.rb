@@ -1,19 +1,41 @@
 require 'spec_helper'
 
 describe PagesController do
+  render_views
 
   describe "GET 'home'" do
     it "returns http success" do
-      get 'home'
+      visit '/pages/home'
       response.should be_success
+    end
+
+    it "should have the right title" do
+      get 'home'
+      page.should have_selector("title", :text => "Fuck Nuts | homo")
     end
   end
 
   describe "GET 'contact'" do
     it "returns http success" do
       get 'contact'
-      response.should be_success
+      page.should be_success
+    end
+
+    it "should have the right title" do
+      get 'contact'
+      page.should have_selector("title", :text => "Fuck Nuts | Poo Face")
     end
   end
 
+  describe "GET 'about'" do
+    it "returns http success" do
+      get 'about'
+      page.should be_success
+    end
+
+    it "should have the right title" do
+      get 'about'
+      page.should have_selector("title", :text => "Fuck Nuts | Ass balls")
+    end
+  end
 end
